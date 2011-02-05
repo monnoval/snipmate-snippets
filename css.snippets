@@ -1,0 +1,384 @@
+#
+# ID and Class selectors
+snippet .
+	.${1:class} {${2}}
+snippet #
+	#${1:id} {${2}}
+#
+# Comments
+snippet /
+	/* ${1} */
+snippet //
+	/* -------------------------------------------------------------- start
+			${1}
+	-------------------------------------------------------------- */
+	${2}
+	
+	/* -------------------------------------------------------------- end */
+snippet //>
+	/* -------------------------------------------------------------- start
+			${1}
+	----------------------------------------------------------------- end */
+snippet ///
+	/* -------------------------------------------------------------- start
+		${1} 
+	
+	-----------------------------------------------------------------
+	----------------------------------------------------------------- end */
+#
+# Windows file name reserve. Yuck!
+snippet con
+	color: none;
+#
+# Personal 
+snippet =mine
+	/*
+	Theme Name: ${1}
+	Theme URI: http://${2:theme-website.com}
+	Description: ${3}
+	Version: ${4}
+	Author: ${5:Marlo Simon Noval}
+	Author URI: http://${6:ragingfx.com}
+	Tags: ${7}
+
+		The CSS, XHTML and design is released under GPL:
+		http://www.opensource.org/licenses/gpl-license.php
+	*/
+
+	/* -------------------------------------------------------------- start
+		HTML5 Boilerplate - http://html5boilerplate.com/ 
+		Reset, font normalization and some base styles.
+	----------------------------------------------------------------- end */
+		@import "reset.css";
+		@import "base.css";
+	/* -------------------------------------------------------------- start
+		Formalize CSS - http://sonspring.com/journal/formalize-css 
+	----------------------------------------------------------------- end */
+		@import "formalize.css";
+	/* -------------------------------------------------------------- start
+		Primary Styles 
+	----------------------------------------------------------------- end */
+		@import "typography.css";
+		@import "layout.css";
+		@import "enrichment.css";
+	/* -------------------------------------------------------------- start
+		Media Queries
+			from HTML5 Boilerplate - http://html5boilerplate.com/ 
+		These follow after primary styles so they will successfully override.
+	----------------------------------------------------------------- end */
+		@import "media.css";
+
+
+snippet =defaults
+	body {background: #${1:222};}
+	div, ul, ol, li, form { position:relative }
+	p,ul,ol {margin-bottom: 15px}
+	ul, ol {margin: 0 0 15px 25px}
+	ul li {list-style-type: circle}
+	ol li {list-style-type: decimal}
+	a, a:visited {color: #${1:fff}; text-decoration: underline;}
+	a:hover {text-decoration: none;}
+	hr {clear: both; border: 0 none; border-top: 1px solid #ccc; display: inline-block; margin: 15px 0px; width: 100%;}
+snippet =layout
+	/* -------------------------------------------------------------- start
+		Layout 
+			Basic Layout
+			Defaults
+			Header
+			Content
+			Footer
+			Helpers 
+
+	-----------------------------------------------------------------
+	----------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Basic Layout 
+	-------------------------------------------------------------- */
+
+	/* Body as wrapper - http://camendesign.com/code/developpeurs_sans_frontieres */
+	html {}
+	body {/* center */}
+
+	#content {}
+	header   {}
+	footer   {}
+	
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Defaults
+	-------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Header 
+	-------------------------------------------------------------- */
+	header {}
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Content 
+	-------------------------------------------------------------- */
+	#content {}
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Footer 
+	-------------------------------------------------------------- */
+	footer {}
+	
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Helpers 
+	-------------------------------------------------------------- */
+	/*
+	 * Non-semantic helper classes: please define your styles before this section.
+	 */
+
+	/* for image replacement */
+	.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+	/* Hide for both screenreaders and browsers
+	 	css-discuss.incutio.com/wiki/Screenreader_Visibility */
+	.hidden { display: none; visibility: hidden; }
+
+	/* Hide only visually, but have it available for screenreaders: by Jon Neal
+	  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+	.visuallyhidden {
+	 	 border: 0;
+	 	 clip: rect(0 0 0 0);
+	 	 height: 1px;
+	 	 margin: -1px;
+	 	 overflow: hidden;
+	 	 padding: 0;
+	 	 position: absolute;
+	 	 width: 1px;
+	}
+
+	/* Hide visually and from screenreaders, but maintain layout */
+	.invisible { visibility: hidden; }
+
+	/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
+	.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+	.clearfix:after { clear: both; }
+	/* fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+	 .clearfix { zoom: 1; }
+	/* for alignment */
+	.center {text-align: center}
+	.left   {float: left; overflow: hidden}
+	.right  {float: right; overflow: hidden}
+
+	/* width options */
+	.width25  {width: 25%} 
+	.width35  {width: 35%} 
+	.width50  {width: 50%} 
+	.width65  {width: 65%} 
+	.width100 {width: 100%}
+
+	/* option for lists to have no styles */
+	ul.nostyle, ol.nostyle {margin: 0}
+	ul.nostyle li, ol.nostyle li {list-style-type: none}
+
+	/* for two and three column divisions */
+	.divvy2, .divvy3 {display: inline-block; width: 100%}
+	.divvy2 .div1, .divvy2 .div2,
+	.divvy3 .div1, .divvy3 .div2, .divvy3 .div3 {float: left}
+	.divvy2 .div1, .divvy2 .div2 {width: 50%}
+	.divvy3 .div1, .divvy3 .div2, .divvy3 .div3 {width: 33.3%}
+
+	/* -------------------------------------------------------------- end */
+snippet =typo
+	/* -------------------------------------------------------------- start
+		Typography 
+			Font families 
+			Defaults 
+			Headings
+				Specifics: h2
+				Specifics: h3
+			Links
+
+	-----------------------------------------------------------------
+	----------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Font families 
+	-------------------------------------------------------------- */
+	body, select, input, textarea, button {font-family: "Helvetica Neue", Helvetica, Arial, "DejaVu Sans Condensed", FreeSans, sans-serif;}
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Defaults 
+	-------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Headings 
+	-------------------------------------------------------------- */
+	h1 {font-size: 300%}
+	h2 {font-size: 245%}
+	h3 {font-size: 167%}
+	h4 {font-size: 153.9%}
+	h5 {font-size: 138.5%}
+	h6 {font-size: 123.1%}
+	h2,h4,h6 {}
+		
+	/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Specifics: h2 
+		-------------------------------------------------------------- */
+		
+		/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Specifics: h3 
+		-------------------------------------------------------------- */
+		
+		/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Links 
+	-------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------- end */
+	/* -------------------------------------------------------------- start
+			Helpers 
+	-------------------------------------------------------------- */
+
+	/* http://developer.yahoo.com/yui/3/cssfonts/ */
+	.font10 {font-size: 77%}
+	.font11 {font-size: 85%}
+	.font12 {font-size: 93%}
+	.font13 {font-size: 100%}
+	.font14 {font-size: 108%}
+	.font16 {font-size: 116%}
+	.font18 {font-size: 138%}
+	.font20 {font-size: 153.9%}
+	.font22 {font-size: 167%}
+	.font24 {font-size: 182%}
+	.font26 {font-size: 197%}
+	.bold {font-weight: bold}
+
+	/* -------------------------------------------------------------- end */
+snippet =text
+	/* -------------------------------------------------------------- start
+			Text elements 
+	-------------------------------------------------------------- */
+	ul { list-style-type: circle; }
+	ol { list-style-type: decimal; }
+
+	dl { margin: 0 0 1.5em 0; }
+	dl dt { font-weight: bold; }
+	dl dd { margin-left: 1.5em; }
+
+	abbr { border-bottom: 1px dotted #000; cursor: help }
+	acronym { border-bottom: 1px dashed #000; cursor: help; text-transform: uppercase; }
+	address { margin: 0 0 .9em;; font-style: italic; }
+	del { color: #000; text-decoration:line-through }
+	big { font-size: 130% }
+	small { font-size: 85% }
+	cite { font-style: italic }
+	ins, dfn {border-bottom: 1px solid #666666; font-style: italic; text-decoration: none}
+
+	a { color: #009; text-decoration: none; }
+	a:hover { color: #d54e21; text-decoration: underline; }
+
+	blockquote { margin: 0 2.5em; color: #444; font-style: italic}
+	blockquote blockquote { color: #888 }
+	blockquote p {margin-bottom: 5px;}
+	strong { font-weight: bold }
+	em { font-style: italic; }
+	pre, code { margin: 1.5em 0; white-space: pre; }
+	pre, code, tt, samp { font: 1.1em Monaco,monospace,Courier,"Courier New"; line-height: 1.5; } 
+	code {background: #eeeeee; padding: 0 3px}
+	pre {background: #f9f9f9; border:1px solid #ccc; padding: 9px; font-size: 90%; overflow: auto; border-left: 20px solid #ddd;}
+	pre code {background: none }
+	tt { display: block; margin: 1.5em 0; line-height: 1.5; }
+
+	/* -------------------------------------------------------------- end */
+snippet =style
+	/* -------------------------------------------------------------- start
+			Styles 
+	-------------------------------------------------------------- */
+	/* Div and Span styles */
+	div.note, span.note         {background-image: url(../images/box-note.png)    } 
+	div.info, span.info         {background-image: url(../images/box-info.png)    } 
+	div.download, span.download {background-image: url(../images/box-download.png)} 
+	div.tip, span.tip           {background-image: url(../images/box-tip.png)     } 
+	div.alert, span.alert,
+	div.warning, span.warning   {background-image: url(../images/box-alert.png)   } 
+	div.note, span.note         {background-color: #eee;    border-top: 1px solid #ccc;	border-bottom: 1px solid #ccc      } 
+	div.info, span.info         {background-color: #c5dbed; border-top: 1px solid #8abce7; border-bottom: 1px solid #8abce7} 
+	div.download, span.download {background-color: #e7f7d3; border-top: 1px solid #66cc33; border-bottom: 1px solid #66cc33} 
+	div.tip, span.tip           {background-color: #fffbbc; border-top: 1px solid #e6db55; border-bottom: 1px solid #e6db55} 
+	div.alert, span.alert, div.warning, span.warning  {background-color: #ffd0c3; border-top: 1px solid #e27e62; border-bottom: 1px solid #e27e62}
+
+	div.note, span.note,
+	div.info, span.info,
+	div.alert, span.alert, div.warning, span.warning,
+	div.download, span.download,
+	div.tip, span.tip {background-position: 10px 8px; padding: 8px 10px 8px 40px; margin: 10px 0; background-repeat: no-repeat;}
+
+	/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Inline Styles 
+		-------------------------------------------------------------- */
+		a.icon-folder   {background-image: url(../images/icon-folder.png)} 
+		a.icon-file     {background-image: url(../images/icon-file.png)  } 
+		a.icon-download {background-image: url(../images/icon-download.png)} 
+		a.icon-pdf      {background-image: url(../images/icon-pdf.png)   } 
+		a.icon-zip      {background-image: url(../images/icon-zip.png)   } 
+
+		a.icon-folder,
+		a.icon-file,
+		a.icon-download,
+		a.icon-pdf,
+		a.icon-zip {background-repeat: no-repeat; background-position: left center; padding: 2px 0 2px 20px}
+
+		/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Unordered List Styles
+		-------------------------------------------------------------- */
+		ul {margin: 0 0 10px 18px}
+		ul.menu {margin: 0}
+		ul.links    {list-style-type: none; margin-left: 2px;}
+		ul.links li {background-repeat: no-repeat; background-position: 0 5px; padding-left: 18px} 
+		ul.links li a {color: #4C6E94;}
+		ul.links li a:hover {text-decoration: none; color: #d54e21;}
+		.box ul.links {margin-left: 10px; margin-bottom: 5px} 
+
+		ul.check, ul.star {list-style-type: none; margin: 10px 0}
+		ul.check li, ul.star li {padding-left: 30px; margin: 5px 0; line-height: 22px}
+		ul.check li {background: url(../images/list-check.png) no-repeat}
+		ul.star li {background: url(../images/list-star.png) no-repeat}
+
+		/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Ordered List Styles
+		-------------------------------------------------------------- */
+		ol {margin: 0 0 10px 20px}
+		ol.circle {padding-left: 22px; margin-left: 0; line-height: 20px; background: url(../images/list-circle.png) repeat-y}
+		ol.circle li {margin-bottom: 4px; font-size: 11px;}
+
+		/* -------------------------------------------------------------- end */
+		/* -------------------------------------------------------------- start
+				Horizontal Rule
+		-------------------------------------------------------------- */
+		hr {background: #ccc; border: 0 none; display: block; height: 1px; margin: 15px 0}
+		hr.none {height: 0}
+		hr.dotted {background: url(../images/hr-dotted.png) repeat-x}
+		hr.dotted2 {background: url(../images/hr-dotted2.png) repeat-x; height: 2px;}
+		.box div.hr hr {display: none}
+		.box div.hr {height: 2px; margin-bottom: 10px}
+		/* -------------------------------------------------------------- end */
+#
+# 
+snippet ../i
+	../img/${1}
+snippet ../c
+	../css/${1}
+snippet ../j
+	../js/${1}
+snippet .j
+	${1}.jpg
+snippet .p
+	${1}.png
+snippet .g
+	${1}.gif
+snippet gif
+	${1}.gif

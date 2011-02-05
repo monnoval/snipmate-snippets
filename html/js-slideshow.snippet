@@ -1,0 +1,51 @@
+<script type="text/javascript" src="js/jquery.innerfade.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<style>
+/* -------------------------------------------------------------- start
+		Slideshow 
+-------------------------------------------------------------- */
+#slideshow {padding: 0 10px; width: 940px; height: 250px; padding-bottom: 20px}
+#slideshow ul li {list-style-type: none;}
+#${1:product-name} {width: 940px; height: 250px; margin: 0; overflow: hidden;}
+#$1 img {margin-bottom: 20px;}
+
+#$1-nav li:hover { cursor: pointer; cursor: hand; z-index: 5000; }
+#$1-nav li span { margin-left: -10000px; }
+#$1-nav li {background-repeat: no-repeat; overflow: hidden; top: 0px; }
+ul#$1-nav {position: absolute; right: 5px; bottom: 5px; z-index: 5000; background: url(../images/home-slide-bg.png) no-repeat; width: 125px; height: 40px; margin-bottom: 0; padding: 23px 0 0 24px; } 
+ul#$1-nav li {display: block; float: left; list-style: none; margin: 0 8px 0 0; width: 17px; height: 18px; color: #7aae0e; }
+ul#$1-nav li {background-image: url(../images/home-slide-btn.png)}
+ul#$1-nav li#button_selected { background-image: url(../images/home-slide-btnActive.png); color: white; }
+
+.tagline {position: absolute; top: 10px; left: 18px; width: 445px; z-index: 9}
+.tagline h1 {font-size: 30px; margin: 10px 0 16px; line-height: 32px}
+.tagline p  {font-size: 11px; line-height: 16px}
+
+/* -------------------------------------------------------------- end */
+</style>
+<div id="slideshow">
+	<div class="tagline">
+		<h1></h1>
+		<p></p>
+	</div>
+	<div id="slide">
+		<ul id="$1">
+			<li><img src="images/.jpg" alt="first image"  /></li>
+			<li><img src="images/.jpg" alt="second image" /></li>
+			<li><img src="images/.jpg" alt="third image"  /></li>
+			<li><img src="images/.jpg" alt="fourth image" /></li>
+		</ul>
+		<ul id="$1-nav">
+			<li class="slide_0"></li>
+			<li class="slide_1"></li>
+			<li class="slide_2"></li>
+			<li class="slide_3"></li>
+		</ul>
+	</div>
+	<ul id="$1-desc">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
